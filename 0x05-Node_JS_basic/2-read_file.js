@@ -1,4 +1,5 @@
 const fs = require('fs');
+
 function countStudents(base) {
   try {
     // Reading data
@@ -25,13 +26,13 @@ function countStudents(base) {
       const field = pupil[fieldIndex];
       const firstName = pupil[firstNameIndex];
       if (!fields[field]) {
-	fields[field] = [];
+        fields[field] = [];
       }
       fields[field].push(firstName);
     });
 
     for (const [field, firstNames] of Object.entries(fields)) {
-       console.log(`Number of pupils in ${field}: ${firstNames.length}. List: ${firstNames.join(', ')}`);
+      console.log(`Number of pupils in ${field}: ${firstNames.length}. List: ${firstNames.join(', ')}`);
     }
   } catch (error) {
     throw new Error('Cannot load the database');
