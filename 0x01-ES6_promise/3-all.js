@@ -1,14 +1,20 @@
-import { uploadPhoto, createUser } from "./utils.js"
+import { uploadPhoto, createUser } from './utils';
 
-export function handleProfileSignup() {
-  const body = uploadPhoto.resolve.body;
-  const firstname = creatUser.resolve.firstName;
-  const lastname = creatUser.resolve.lastName;
-  return new Promise((resolve, reject) => {
-    if (true) {
-      resolve(`${body} ${firstname} ${lastname}`);
-    } else {
-      reject(Error("Signup system offline"));
-    }
-  }
+function handleProfileSignup() {
+  uploadPhoto()
+    .then((result) => {
+      process.stdout.write(result.body);
+    })
+    .catch(() => {
+      console.log('Signup system offline');
+    });
+
+  createUser()
+    .then((result) => {
+      console.log(` ${result.firstName} ${result.lastName}`);
+    })
+    .catch(() => {
+      console.log('Signup system offline');
+    });
 }
+export default handleProfileSignup;
