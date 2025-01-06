@@ -1,4 +1,4 @@
-import fs from 'fs';
+const fs = require('fs');
 
 function countStudents(File) {
   try {
@@ -37,5 +37,4 @@ function countStudents(File) {
     throw new Error('Cannot load the database');
   }
 }
-
-export default countStudents;
+module.exports = countStudents;
