@@ -1,11 +1,10 @@
-const fs = require('fs');
+import fs from 'fs';
 
-function countStudents(base) {
+function countStudents(File) {
   try {
     // Reading data
-    const data = fs.readFileSync(base, 'utf-8');
-    // Split data of file into lines
-    // filter out empty lines
+    const data = fs.readFileSync(File, 'utf-8');
+
     const lines = data.split('\n').filter((line) => line.trim() !== '');
 
     if (lines.length <= 1) {
