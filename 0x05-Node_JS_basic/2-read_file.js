@@ -8,20 +8,20 @@ function countStudents(File) {
     const lines = data.split('\n').filter((line) => line.trim() !== '');
 
     if (lines.length <= 1) {
-      console.log('Number of pupils: 0');
+      console.log('Number of students: 0');
       return;
     }
 
     const starting = lines[0].split(',');
-    const pupils = lines.slice(1).map((line) => line.split(','));
+    const students = lines.slice(1).map((line) => line.split(','));
 
-    console.log(`Number of pupils: ${pupils.length}`);
+    console.log(`Number of students: ${students.length}`);
 
     const fieldIndex = starting.indexOf('field');
     const firstNameIndex = starting.indexOf('firstname');
     const fields = {};
 
-    pupils.forEach((pupil) => {
+    students.forEach((pupil) => {
       const field = pupil[fieldIndex];
       const firstName = pupil[firstNameIndex];
       if (!fields[field]) {
@@ -31,7 +31,7 @@ function countStudents(File) {
     });
 
     for (const [field, firstNames] of Object.entries(fields)) {
-      console.log(`Number of pupils in ${field}: ${firstNames.length}. List: ${firstNames.join(', ')}`);
+      console.log(`Number of students in ${field}: ${firstNames.length}. List: ${firstNames.join(', ')}`);
     }
   } catch (error) {
     throw new Error('Cannot load the database');
