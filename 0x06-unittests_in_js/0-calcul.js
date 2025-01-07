@@ -1,4 +1,4 @@
 function calculateNumber(x, y) {
-  return parseInt(x + y);
+  return Math.round(x) + Math.round(y);
 }
 module.exports = calculateNumber;
