@@ -1,4 +1,4 @@
-const calculateNumber = (x, y) => {
+function calculateNumber(x, y) {
   return parseInt(x + y);
 }
-export default calculateNumber;
+module.exports = calculateNumber;

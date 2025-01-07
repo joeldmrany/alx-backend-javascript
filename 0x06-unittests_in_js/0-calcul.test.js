@@ -1,6 +1,6 @@
-import calculateNumber from './0-calcul.js';
-import assert from 'assert';
+const calculateNumber = require('./0-calcul.js');
 
+const assert = require('assert');
 describe('calculateNumber', () => {
   it('1 + 2 should return 3', function() {
     assert.equal(calculateNumber(1, 2), 3);
