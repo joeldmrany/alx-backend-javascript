@@ -17,5 +17,6 @@ describe('simple calculator', () => {
   it('divide calculation', () => {
     assert.equal(calculateNumber('DIVIDE', 1, 3), 0.3333333333333333);
     assert.equal(calculateNumber('DIVIDE', 4, 2), 2);
+    assert.equal(calculateNumber('DIVIDE', 3, 0), 'Error');
   });
 });
