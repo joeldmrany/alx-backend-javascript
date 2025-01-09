@@ -44,7 +44,7 @@ const countStudents = (File) => new Promise((res, rej) => {
 // creating server
 const app = http.createServer((req, res) => {
   if (req.url === '/') {
-    res.end('Hello ALX!');
+    res.end('Hello Holberton School!');
   } else if (req.url === '/students') {
     countStudents(process.argv[2])
       .then((response) => {
@@ -59,5 +59,5 @@ const app = http.createServer((req, res) => {
 
 // listening to the server
 app.listen(PORT, HOST, () => {
-  console.log(`Server running at http://${HOST}:${PORT}`);
+  console.log(`The server is running at http://${HOST}:${PORT}`);
 });
